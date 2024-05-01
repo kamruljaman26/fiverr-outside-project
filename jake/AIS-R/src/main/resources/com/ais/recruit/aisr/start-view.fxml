@@ -25,9 +25,4 @@
         </font>
     </Button>
    <Label layoutX="182.0" layoutY="267.0" text="Welcome to AIS-R System" textFill="#727272" />
-   <Button layoutX="397.0" layoutY="355.0" minWidth="80.0" onAction="#registerBtnAction" prefHeight="24.0" prefWidth="80.0" style="-fx-background-color: #138da8;" text="Register" textFill="WHITE">
-      <font>
-         <Font name="Arial Bold" size="13.0" />
-      </font>
-   </Button>
 </AnchorPane>

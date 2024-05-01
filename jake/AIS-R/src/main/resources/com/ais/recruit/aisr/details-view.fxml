@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -25,8 +26,14 @@
          <Font name="Arial Bold" size="13.0" />
       </font>
    </Button>
-   <ListView fx:id="detailsListViewId" layoutX="21.0" layoutY="81.0" prefHeight="266.0" prefWidth="458.0" />
+   <ListView fx:id="detailsListViewId" layoutX="21.0" layoutY="113.0" prefHeight="234.0" prefWidth="458.0" />
    <Button layoutX="55.0" layoutY="356.0" minWidth="66.0" onAction="#registrationButtonAction" prefHeight="25.0" prefWidth="193.0" style="-fx-background-color: #138da8;" text="RECRUIT REGISTRATION" textFill="WHITE">
+      <font>
+         <Font name="Arial Bold" size="13.0" />
+      </font>
+   </Button>
+   <TextField fx:id="searchTxtFldId" layoutX="21.0" layoutY="79.0" prefHeight="26.0" prefWidth="342.0" />
+   <Button fx:id="searchBtnAction" layoutX="372.0" layoutY="79.0" minWidth="66.0" onAction="#signoutButtonAction" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #138da8;" text="SEARCH" textFill="WHITE">
       <font>
          <Font name="Arial Bold" size="13.0" />
       </font>

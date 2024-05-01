@@ -24,12 +24,4 @@ public class StartController {
         );
     }
 
-    public void registerBtnAction(ActionEvent actionEvent) {
-//        // Load the login page
-//        FXUtil.loadView(
-//                actionEvent,
-//                FXUtil.TY,
-//                "AIS-R"
-//        );
-    }
 }
