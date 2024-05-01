@@ -2,6 +2,7 @@ package com.ais.recruit.aisr.dao;
 
 import com.ais.recruit.aisr.model.Recruit;
 import com.ais.recruit.aisr.model.enums.*;
+import com.ais.recruit.aisr.util.PasswordUtil;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -34,11 +35,18 @@ public class RecruitCsvDao implements DAO<Recruit> {
     public void addOrUpdate(Recruit recruit) {
         int index = getIdFor(recruit);
         if (index != -1) {
+            // Check if password has been updated
+            if (!recruit.getPassword().equals(recruits.get(index).getPassword())) {
+                recruit.setPassword(PasswordUtil.encrypt(recruit.getPassword()));
+            }
             recruits.set(index, recruit);
         } else {
+            // Encrypt password before adding new recruit
+            recruit.setPassword(PasswordUtil.encrypt(recruit.getPassword()));
             recruits.add(recruit);
         }
     }
+
 
     @Override
     public int getIdFor(Recruit recruit) {

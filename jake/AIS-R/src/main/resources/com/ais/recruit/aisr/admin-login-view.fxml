@@ -26,8 +26,8 @@
          <Font name="Arial Bold" size="20.0" />
       </font>
    </Label>
-   <TextField layoutX="149.0" layoutY="159.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Username" />
-   <PasswordField layoutX="149.0" layoutY="192.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Password" />
+   <TextField fx:id="emailTxtFldId" layoutX="149.0" layoutY="159.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Email" />
+   <PasswordField fx:id="passwordTxtFldId" layoutX="149.0" layoutY="192.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Password" />
    <Button layoutX="399.0" layoutY="356.0" minWidth="66.0" onAction="#backButtonAction" prefHeight="24.0" prefWidth="80.0" style="-fx-background-color: #138da8;" text="BACK" textFill="WHITE">
       <font>
          <Font name="Arial Bold" size="13.0" />
@@ -38,4 +38,5 @@
          <Font name="Arial Bold" size="13.0" />
       </font>
    </Button>
+   <Label fx:id="errMsgLabelId" layoutX="78.0" layoutY="300.0" prefHeight="17.0" prefWidth="363.0" textFill="#da6c6c" />
 </AnchorPane>

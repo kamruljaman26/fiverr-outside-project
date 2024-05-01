@@ -3,6 +3,7 @@ package com.ais.recruit.aisr.dao;
 import com.ais.recruit.aisr.model.Staff;
 import com.ais.recruit.aisr.model.enums.Branch;
 import com.ais.recruit.aisr.model.enums.Level;
+import com.ais.recruit.aisr.util.PasswordUtil;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -32,11 +33,18 @@ public class StaffCsvDao implements DAO<Staff> {
     public void addOrUpdate(Staff staff) {
         int index = getIdFor(staff);
         if (index != -1) {
+            // Check if password has been updated
+            if (!staff.getPassword().equals(staffMembers.get(index).getPassword())) {
+                staff.setPassword(PasswordUtil.encrypt(staff.getPassword()));
+            }
             staffMembers.set(index, staff);
         } else {
+            // Encrypt password before adding new staff
+            staff.setPassword(PasswordUtil.encrypt(staff.getPassword()));
             staffMembers.add(staff);
         }
     }
+
 
     @Override
     public int getIdFor(Staff staff) {

@@ -2,6 +2,7 @@ package com.ais.recruit.aisr.dao;
 
 import com.ais.recruit.aisr.model.Admin;
 import com.ais.recruit.aisr.model.enums.Position;
+import com.ais.recruit.aisr.util.PasswordUtil;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -31,8 +32,14 @@ public class AdminCsvDao implements DAO<Admin> {
     public void addOrUpdate(Admin admin) {
         int index = getIdFor(admin);
         if (index != -1) {
+            // if password updated, re-encrypt
+            if(!admin.getPassword().equals(admins.get(index).getPassword())){
+                admin.setPassword(PasswordUtil.encrypt(admin.getPassword()));
+            }
             admins.set(index, admin);
         } else {
+            // Add Password encryption
+            admin.setPassword(PasswordUtil.encrypt(admin.getPassword()));
             admins.add(admin);
         }
     }
