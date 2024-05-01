@@ -5,6 +5,8 @@ module com.ais.recruit.aisr {
                             
     opens com.ais.recruit.aisr to javafx.fxml;
     exports com.ais.recruit.aisr;
+    exports com.ais.recruit.aisr.model;
+    exports com.ais.recruit.aisr.model.enums;
     exports com.ais.recruit.aisr.controller;
     opens com.ais.recruit.aisr.controller;
 }

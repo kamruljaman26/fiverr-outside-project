@@ -27,7 +27,10 @@ public class PasswordUtil {
     }
 
     public static boolean verifyPassword(String plainPassword, String hashedPassword) {
-        String hashedInputPassword = encrypt(plainPassword);
-        return hashedInputPassword.equals(hashedPassword);
+        String hashedInputPassword = encrypt(plainPassword).trim();
+        System.out.println(plainPassword);
+        System.out.println(hashedInputPassword);
+        System.out.println(hashedPassword);
+        return hashedInputPassword.equals(hashedPassword.trim());
     }
 }

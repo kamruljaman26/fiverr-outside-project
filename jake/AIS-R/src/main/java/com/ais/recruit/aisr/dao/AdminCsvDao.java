@@ -13,6 +13,10 @@ public class AdminCsvDao implements DAO<Admin> {
     private List<Admin> admins = new ArrayList<>();
     public static final String FILENAME = "database/admins.csv";
 
+    public AdminCsvDao() {
+        load();
+    }
+
     @Override
     public Admin getById(String email) {
         for (Admin admin : admins) {
