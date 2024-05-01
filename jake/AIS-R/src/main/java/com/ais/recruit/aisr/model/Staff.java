@@ -46,4 +46,12 @@ public class Staff extends User{
         this.branch = branch;
     }
 
+    @Override
+    public String toString() {
+        return "Staff{" +
+                "staffId=" + staffId +
+                ", level=" + level +
+                ", branch=" + branch +
+                "} " + super.toString();
+    }
 }

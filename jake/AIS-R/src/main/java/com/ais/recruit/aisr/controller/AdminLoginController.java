@@ -33,8 +33,8 @@ public class AdminLoginController implements Initializable {
 
         if (validateInput(email, password)) {
             Admin admin = adminDao.getById(email);
-            System.out.println(admin.getPassword());
-            System.out.println(PasswordUtil.verifyPassword(password, admin.getPassword()));
+//            System.out.println(admin.getPassword());
+//            System.out.println(PasswordUtil.verifyPassword(password, admin.getPassword()));
             if (admin != null && PasswordUtil.verifyPassword(password, admin.getPassword())) {
                 errMsgLabelId.setText("Login successful!");
 

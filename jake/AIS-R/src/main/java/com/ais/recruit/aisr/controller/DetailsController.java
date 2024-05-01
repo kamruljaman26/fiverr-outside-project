@@ -1,5 +1,6 @@
 package com.ais.recruit.aisr.controller;
 
+import com.ais.recruit.aisr.dao.UserDetails;
 import com.ais.recruit.aisr.util.FXUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -27,6 +28,9 @@ public class DetailsController implements Initializable {
                 FXUtil.START_VIEW,
                 "Admin Login"
         );
+
+        // remove user session
+        UserDetails.setCurrentUser(null);
     }
 
     public void registrationButtonAction(ActionEvent actionEvent) {

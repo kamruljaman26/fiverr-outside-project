@@ -14,6 +14,10 @@ public class StaffCsvDao implements DAO<Staff> {
     private List<Staff> staffMembers = new ArrayList<>();
     public static final String FILENAME = "database/staff.csv";
 
+    public StaffCsvDao() {
+        load();
+    }
+
     @Override
     public Staff getById(String email) {
         for (Staff staff : staffMembers) {
@@ -26,6 +30,7 @@ public class StaffCsvDao implements DAO<Staff> {
 
     @Override
     public List<Staff> getAll() {
+        System.out.println(staffMembers);
         return new ArrayList<>(staffMembers);
     }
 

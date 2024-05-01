@@ -16,6 +16,10 @@ public class RecruitCsvDao implements DAO<Recruit> {
     public static final String FILENAME = "database/recruits.csv";
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
+    public RecruitCsvDao() {
+        load();
+    }
+
     @Override
     public Recruit getById(String email) {
         for (Recruit recruit : recruits) {
