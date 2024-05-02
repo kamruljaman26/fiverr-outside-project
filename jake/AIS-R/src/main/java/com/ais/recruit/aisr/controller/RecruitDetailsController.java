@@ -1,5 +1,6 @@
 package com.ais.recruit.aisr.controller;
 
+import com.ais.recruit.aisr.model.enums.Level;
 import com.ais.recruit.aisr.util.FXUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -12,7 +13,6 @@ import java.util.ResourceBundle;
 
 public class RecruitDetailsController implements Initializable {
 
-
     public TextField fullnameTxtFldId;
     public PasswordField addressTxtFldId;
     public TextField phoneTxtFldId;
@@ -20,9 +20,9 @@ public class RecruitDetailsController implements Initializable {
     public TextField degreeTxtFldId;
     public PasswordField qualificationTxtFldId;
     public TextField staffIDTxtFldId;
-    public ComboBox levelComboBoxId;
-    public ComboBox interviewComboBoxId;
-    public ComboBox branchComboBoxId;
+    public ComboBox<Level> levelComboBoxId;
+    public ComboBox<Level> interviewComboBoxId;
+    public ComboBox<Level> branchComboBoxId;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -4,5 +4,6 @@ public enum Branch {
     MELBOURNE,
     SYDNEY,
     BRISBANE,
-    ADELAIDE
+    ADELAIDE,
+    NONE
 }

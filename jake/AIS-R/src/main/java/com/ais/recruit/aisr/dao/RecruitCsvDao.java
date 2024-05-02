@@ -48,6 +48,7 @@ public class RecruitCsvDao implements DAO<Recruit> {
             // Encrypt password before adding new recruit
             recruit.setPassword(PasswordUtil.encrypt(recruit.getPassword()));
             recruits.add(recruit);
+            System.out.println(recruit);
         }
     }
 
@@ -99,41 +100,43 @@ public class RecruitCsvDao implements DAO<Recruit> {
     }
 
     private String recruitToCsvLine(Recruit recruit) {
-        return recruit.getFullName() + "," + recruit.getAddress() + "," + recruit.getPhone() + "," +
-                recruit.getEmail() + "," + recruit.getDegree() + "," + recruit.getQualification() + "," +
-                recruit.getHigherQualification() + "," +
-                recruit.getDateOfInterview().format(formatter) + "," +
-                recruit.getLevel() + "," + recruit.getBranch();
+        return String.join(",",
+                recruit.getFullName(),
+                recruit.getAddress(),
+                recruit.getPhone(),
+                recruit.getEmail(),
+                recruit.getUsername(),
+                recruit.getPassword(),  // Ensure this is already encrypted or consider not storing passwords in CSV
+                recruit.getDegree(),
+                recruit.getQualification(),
+                recruit.getHigherQualification(),
+                recruit.getDateOfInterview().format(formatter),
+                recruit.getLevel().name(),
+                recruit.getBranch().name()
+        );
     }
 
     private Recruit csvLineToRecruit(String line) {
         try {
             String[] data = line.split(",");
-            if (data.length != 10) {
+            if (data.length != 12) {
                 throw new IllegalArgumentException("Invalid number of fields in CSV line.");
             }
             String fullName = data[0];
             String address = data[1];
             String phone = data[2];
             String email = data[3];
-            String degree = data[4];
-            String qualification = data[5];
-            String higherQualification = data[6];
-            LocalDateTime dateOfInterview = LocalDateTime.parse(data[7], formatter);
-            Level level = Level.valueOf(data[8]);
-            Branch branch = Branch.valueOf(data[9]);
-            Recruit recruit = new Recruit();
-            recruit.setFullName(fullName);
-            recruit.setAddress(address);
-            recruit.setPhone(phone);
-            recruit.setEmail(email);
-            recruit.setDegree(degree);
-            recruit.setQualification(qualification);
-            recruit.setHigherQualification(higherQualification);
-            recruit.setDateOfInterview(dateOfInterview);
-            recruit.setLevel(level);
-            recruit.setBranch(branch);
-            return recruit;
+            String username = data[4];
+            String password = data[5];  // Consider decrypting if necessary
+            String degree = data[6];
+            String qualification = data[7];
+            String higherQualification = data[8];
+            LocalDateTime dateOfInterview = LocalDateTime.parse(data[9], formatter);
+            Level level = Level.valueOf(data[10]);
+            Branch branch = Branch.valueOf(data[11]);
+
+            return new Recruit(fullName, address, phone, email, username, password,
+                    degree, qualification, higherQualification, dateOfInterview, level, branch);
         } catch (Exception e) {
             System.err.println("Error parsing CSV line: " + e.getMessage());
             return null;
