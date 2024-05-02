@@ -13,6 +13,8 @@ public class Recruit extends User {
     private LocalDateTime dateOfInterview;
     private Level level;
     private Branch branch;
+    private int staffId;
+
 
     public Recruit() {
     }
@@ -25,6 +27,14 @@ public class Recruit extends User {
         this.dateOfInterview = dateOfInterview;
         this.level = level;
         this.branch = branch;
+    }
+
+    public int getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(int staffId) {
+        this.staffId = staffId;
     }
 
     public String getDegree() {

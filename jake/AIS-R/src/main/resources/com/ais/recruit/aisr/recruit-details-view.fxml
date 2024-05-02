@@ -28,16 +28,16 @@
       </font>
    </Label>
    <TextField fx:id="fullnameTxtFldId" layoutX="44.0" layoutY="99.0" prefHeight="25.0" prefWidth="200.0" promptText="Full Name" />
-   <PasswordField fx:id="addressTxtFldId" layoutX="262.0" layoutY="99.0" prefHeight="25.0" prefWidth="200.0" promptText="Address" />
+   <TextField fx:id="addressTxtFldId" layoutX="262.0" layoutY="99.0" prefHeight="25.0" prefWidth="200.0" promptText="Address" />
    <Button layoutX="394.0" layoutY="357.0" minWidth="66.0" onAction="#backButtonAction" prefHeight="23.0" prefWidth="85.0" style="-fx-background-color: #138da8;" text="BACK" textFill="WHITE">
       <font>
          <Font name="Arial Bold" size="13.0" />
       </font>
    </Button>
    <TextField fx:id="phoneTxtFldId" layoutX="44.0" layoutY="130.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Phone Number" />
-   <PasswordField fx:id="emailTxtFldId" layoutX="262.0" layoutY="130.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Email Address" />
+   <TextField fx:id="emailTxtFldId" layoutX="262.0" layoutY="130.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Email Address" />
    <TextField fx:id="degreeTxtFldId" layoutX="44.0" layoutY="163.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Degree" />
-   <PasswordField fx:id="qualificationTxtFldId" layoutX="262.0" layoutY="163.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Higher Qualification" />
+   <TextField fx:id="qualificationsTxtFldId" layoutX="262.0" layoutY="163.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Qualification" />
    <TextField fx:id="staffIDTxtFldId" layoutX="44.0" layoutY="196.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Staff ID" />
    <ComboBox fx:id="levelComboBoxId" layoutX="262.0" layoutY="197.0" prefHeight="26.0" prefWidth="200.0" promptText="Level" />
    <ComboBox fx:id="interviewComboBoxId" layoutX="44.0" layoutY="231.0" prefHeight="26.0" prefWidth="200.0" promptText="Interview Date" />
